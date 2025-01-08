@@ -100,4 +100,5 @@ leaflet(data = cities) %>%
              radius = ~sqrt(Years * Hourly) * 500, 
              popup = ~paste(Company, ": ", experiences, sep = "")  # Show city name and experiences in the popup
   ) %>%  
+  setView(lng = -77.25, lat = 38.85, zoom = 10)
   addLegend("bottomright", colors = "#ffa500", labels = "Size of bubbles indicate number of years.", title = "Prakash Subedi's Professional Experience Locations")
