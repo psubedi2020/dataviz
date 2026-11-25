@@ -15,7 +15,6 @@
   --line: #d4ddd1;
   --pale: #eaf0e7;
   --forest: #153b31;
-  --mint: #c6ebbd;
   --display: Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
@@ -32,42 +31,38 @@ button, input, select { color: var(--ink); }
 .wrap { width: min(1200px, 100% - 64px); margin: 0 auto; }
 .skip { position: absolute; z-index: 10; left: 1rem; top: .5rem; background: var(--white); padding: .7rem 1rem; transform: translateY(-200%); }
 .skip:focus { transform: none; }
-.site-head { display: flex; min-height: 73px; align-items: center; justify-content: space-between; gap: 18px; }
+.site-head { display: flex; min-height: 50px; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; padding-block: 6px; border-bottom: 1px solid var(--line); }
+.brand-line { display: flex; align-items: center; gap: 8px 13px; flex-wrap: wrap; }
+.brand-role { color: var(--muted); font-size: .8rem; }
 .brand { display: inline-flex; text-decoration: none; align-items: center; gap: 10px; font-weight: 720; white-space: nowrap; }
-.monogram { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid #b9cbb7; border-radius: 10px; background: #e1eddd; color: var(--forest); font: 700 .74rem var(--mono); }
-.site-nav { display: flex; gap: clamp(14px, 3vw, 35px); align-items: center; flex-wrap: wrap; }
+.monogram { display: grid; place-items: center; width: 27px; height: 27px; border: 1px solid #b9cbb7; border-radius: 10px; background: #e1eddd; color: var(--forest); font: 700 .74rem var(--mono); }
+.site-nav { display: flex; gap: 4px clamp(11px, 2.5vw, 26px); align-items: center; flex-wrap: wrap; }
 .site-nav a, .profiles a { font-size: .87rem; font-weight: 650; text-decoration: none; }
 .site-nav a:hover, .profiles a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-nav .external { border-left: 1px solid var(--line); padding-left: 24px; }
-.hero { display: grid; grid-template-columns: 1.12fr 1fr; gap: clamp(28px, 5vw, 76px); align-items: center; background: #102c25; padding: clamp(30px, 5vw, 66px); border-radius: 24px; color: #f4f5e9; }
-.hero :focus-visible { outline-color: #c9f1ba; }
-.kicker { color: var(--muted); font: 700 .71rem/1.35 var(--mono); text-transform: uppercase; letter-spacing: .105em; margin: 0 0 12px; }
-.hero .kicker { color: #bee0b4; }
+
 h1, h2, h3, p { margin-top: 0; }
-h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: -.055em; margin: 0 0 16px; }
-.hero-role { color: #ddf0d6; font-size: clamp(1.12rem, 2vw, 1.48rem); font-weight: 670; margin-bottom: 10px; }
-.hero-copy { max-width: 41ch; color: #c6d6cb; font-size: 1.02rem; margin-bottom: 25px; }
-.hero-action { display: inline-flex; gap: 18px; align-items: center; background: var(--mint); color: #122b22; text-decoration: none; border-radius: 9px; font-size: .91rem; font-weight: 750; padding: 12px 16px; }
-.hero-action:hover { background: #e1f6d9; }
-.featured { border: 1px solid #406256; border-radius: 16px; padding: 16px 20px 5px; background: #1a3a31; }
-.featured h2 { font-size: .83rem; font-weight: 670; color: #c7e5be; margin: 0; }
-.feature { display: grid; grid-template-columns: minmax(105px, .75fr) minmax(0, 1.25fr) auto; gap: 12px; align-items: center; min-height: 76px; padding: 12px 0; color: #f2f5ef; text-decoration: none; }
-.feature + .feature { border-top: 1px solid #406256; }
-.feature:hover .feature-copy, .feature:focus-visible .feature-copy { text-decoration: underline; text-underline-offset: 4px; }
-.feature-number { font: 400 clamp(1.6rem, 2.7vw, 2.6rem)/1 var(--display); letter-spacing: -.045em; color: #d2efc7; white-space: nowrap; }
-.feature-copy { font-size: .88rem; line-height: 1.45; }
-.feature-copy small { display: block; margin-top: 3px; color: #bdcdc1; font-size: .74rem; }
-.feature-arrow { color: #c6ebbd; }
+
+#timeline { margin-top: 16px; }
+.featured { width: min(100%, 30rem); margin-top: 29px; padding: 10px 13px 4px; background: var(--white); border: 1px solid var(--line); border-radius: 10px; }
+.featured h2 { margin: 0 0 2px; color: var(--muted); font-size: .82rem; }
+.feature { display: grid; grid-template-columns: minmax(3.6rem, .26fr) minmax(0, 1fr) max-content; gap: 10px; align-items: start; padding: 8px 0; color: var(--ink); text-decoration: none; }
+.feature + .feature { border-top: 1px solid var(--line); }
+.feature:hover .feature-copy, .feature:focus-visible .feature-copy { text-decoration: underline; text-underline-offset: 3px; }
+.feature-number { min-width: 0; color: var(--forest); font-size: .82rem; font-weight: 750; overflow-wrap: anywhere; }
+.feature-copy { min-width: 0; font-size: .78rem; line-height: 1.35; overflow-wrap: anywhere; }
+.feature-copy small { display: block; margin-top: 2px; color: var(--muted); font-size: .68rem; }
+.feature-arrow { color: var(--forest); font-size: .75rem; }
 .section { margin-top: 54px; scroll-margin-top: 22px; }
 .section-head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: end; justify-content: space-between; margin-bottom: 17px; }
-.section-head h2 { margin: 0; font: 400 clamp(2rem, 3.7vw, 3.05rem)/1.08 var(--display); letter-spacing: -.035em; }
+.section-head :is(h1, h2) { margin: 0; font: 400 clamp(2rem, 3.7vw, 3.05rem)/1.08 var(--display); letter-spacing: -.035em; }
 .section-head p { color: var(--muted); margin: 4px 0 0; font-size: .9rem; }
 .scope-chip { border: 1px solid var(--line); color: var(--muted); border-radius: 6px; padding: 6px 10px; font: 700 .72rem/1.5 var(--mono); white-space: nowrap; }
 .workbench { background: var(--white); border: 1px solid var(--line); border-radius: 19px; }
 .filterbar, .toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 15px 17px; }
 .filterbar { border-bottom: 1px solid var(--line); }
 .filter-buttons, .mode-buttons, .play-controls, .view-options { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
-.filter-buttons { flex: 1 1 auto; }
+.filter-buttons { min-width: 0; flex: 1 1 auto; }
 .control { min-height: 37px; padding: 5px 10px; border: 1px solid #c8d4c8; border-radius: 7px; background: var(--white); font-size: .82rem; font-weight: 650; }
 .control:hover:not(:disabled) { background: #edf4ec; }
 .control:disabled { cursor: default; opacity: .52; }
@@ -112,6 +107,10 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 .lane-1 { --lane-accent: #285c55; --lane-text: #264b45; --lane-fill: #e0efea; --lane-edge: #b9d9cd; }
 .lane-2 { --lane-accent: #305b80; --lane-text: #254763; --lane-fill: #e5edf7; --lane-edge: #becfe5; }
 .lane-3 { --lane-accent: #725386; --lane-text: #553763; --lane-fill: #f0e8f5; --lane-edge: #d9c4e4; }
+.event.grouped { justify-content: center; font: 750 .7rem var(--mono); padding: 0; }
+.lane-5 { --lane-accent: #805c29; --lane-text: #61431d; --lane-fill: #fbefd7; --lane-edge: #e0c892; }
+.lane-6 { --lane-accent: #695485; --lane-text: #573b6d; --lane-fill: #f2ebf8; --lane-edge: #d9c7e8; }
+.lane-7 { --lane-accent: #367270; --lane-text: #235553; --lane-fill: #e4f1f0; --lane-edge: #bad8d6; }
 .lane-4 { --lane-accent: #426722; --lane-text: #36551c; --lane-fill: #ebf2da; --lane-edge: #ccddad; }
 .chart-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5px 17px; align-items: center; padding: 8px 17px; color: var(--muted); font-size: .74rem; background: #f8faf6; }
 .chart-caption p { margin: 0; }
@@ -139,6 +138,7 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 .small { min-height: 31px; font-size: .74rem; }
 .status { color: var(--muted); font-size: .73rem; min-height: 1em; margin: 4px 0 0; }
 .credential-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.education-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .credential { min-height: 112px; padding: 16px; background: var(--white); border: 1px solid var(--line); border-radius: 12px; }
 .credential time { font: 700 .75rem var(--mono); color: #335e49; }
 .credential h3 { font-size: .96rem; margin: 7px 0 3px; }
@@ -158,26 +158,25 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 .profiles { display: flex; flex-wrap: wrap; gap: 17px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 @media (max-width: 940px) {
-  .hero { gap: 26px; }
+
   .search { flex: 1 1 150px; }
 }
 @media (max-width: 760px) {
   .wrap { width: calc(100% - 36px); }
   .site-nav { gap: 12px; }
   .site-nav .external { display: none; }
-  .hero { grid-template-columns: 1fr; }
-  .feature { grid-template-columns: 107px minmax(0, 1fr) auto; }
+
   .section { margin-top: 39px; }
   .entries, .credential-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .training-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 480px) {
   .wrap { width: calc(100% - 24px); }
-  .site-head { flex-wrap: wrap; gap: 6px 10px; padding: 12px 0; }
+  .site-head { flex-wrap: wrap; gap: 6px 10px; padding: 7px 0; }
   .site-nav { margin-left: 0; }
-  .hero { padding: 24px 17px; border-radius: 15px; }
-  .featured { padding-inline: 13px; }
-  .hero-copy { font-size: .92rem; }
+  .site-nav a { font-size: .78rem; }
+
+
   .filterbar, .toolbar { padding-inline: 11px; }
   .filterbar { gap: 8px; }
   .toolbar { gap: 7px 9px; }
@@ -197,15 +196,13 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 }
 @media print {
   .wrap { width: 100%; }
-  .site-head, .toolbar, .filterbar, .play-progress, .chart-scroll, .chart-caption, .hero-action, .site-footer, #copy-link { display: none; }
-  .hero { display: block; color: #16241b; padding: 9px 0; background: transparent; }
-  .hero h1 { font-size: 3rem; }
-  .hero .kicker, .hero-role, .hero-copy, .featured h2, .feature, .feature-number, .feature-copy small, .feature-arrow { color: #16241b; }
-  .featured { background: white; }
+  .site-nav, .toolbar, .filterbar, .play-progress, .chart-scroll, .chart-caption, .site-footer, #copy-link { display: none; }
+
   .section { margin-top: 16px; }
   .training-panel, .credential, .detail { break-inside: avoid; }
 }
 .detail { grid-template-columns: minmax(108px,.28fr) minmax(0,1fr) minmax(278px,.77fr); }
+.detail[data-has-map="false"] { grid-template-columns: minmax(108px,.28fr) minmax(0,1fr); }
 .detail-location { margin: 0 0 9px; color: var(--forest); font-size: .86rem; font-weight: 700; }
 .entry .entry-location { margin-top: 5px; font-size: .77rem; font-weight: 650; color: var(--lane-text); }
 .location-panel { align-self: start; min-width: 0; background: var(--white); border: 1px solid #ccd9cc; border-radius: 12px; padding: 11px; }
@@ -231,7 +228,7 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
   .location-panel { grid-column: 2; width: min(100%, 460px); }
 }
 @media (max-width: 520px) {
-  .detail { grid-template-columns: minmax(0, 1fr); }
+  .detail, .detail[data-has-map="false"] { grid-template-columns: minmax(0, 1fr); }
   .location-panel { grid-column: 1; }
 }
 @media print {
@@ -242,46 +239,25 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="wrap site-head" id="top">
-  <a class="brand" href="#top"><span class="monogram" aria-hidden="true">PS</span> Prakash Subedi</a>
+  <div class="brand-line"><a class="brand" href="#top"><span class="monogram" aria-hidden="true">PS</span> Prakash Subedi</a><span class="brand-role">Lead Software Engineer</span></div>
   <nav class="site-nav" aria-label="Portfolio">
     <a href="#timeline">Timeline</a>
+    <a href="#education">Education</a>
     <a href="#certifications">Certifications</a>
     <a href="#training">Training</a>
     <a class="external" href="https://www.linkedin.com/in/psubedi2026" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
   </nav>
 </header>
 <main class="wrap" id="main">
-  <section class="hero" aria-labelledby="portfolio-title">
-    <div>
-      <p class="kicker">Engineering portfolio</p>
-      <h1 id="portfolio-title">Prakash Subedi</h1>
-      <p class="hero-role">Lead Software Engineer</p>
-      <p class="hero-copy">I build and secure Java APIs, automate cloud delivery, and prototype AI applications. I’ve also taught backend engineering to career changers and enterprise teams.</p>
-      <a class="hero-action" href="#timeline">Explore career timeline <span aria-hidden="true">↓</span></a>
-    </div>
-    <div class="featured">
-      <h2>Featured accomplishments</h2>
-      <a class="feature" href="#project=geico" data-project="geico">
-        <span class="feature-number">4h → 15m</span><span class="feature-copy">Automated pull requests across 130+ repositories<small>GEICO</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="feature" href="#project=statefarm" data-project="statefarm">
-        <span class="feature-number">4 APIs</span><span class="feature-copy">Built and secured Spring Boot claims services<small>State Farm</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
-      </a>
-      <a class="feature" href="#project=ironyard" data-project="ironyard">
-        <span class="feature-number">12 weeks</span><span class="feature-copy">Taught Java backend engineering to military veterans<small>NOVA Uncommon Coders</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
-  </section>
-
   <section class="section" id="timeline" aria-labelledby="timeline-heading">
     <div class="section-head">
-      <div><h2 id="timeline-heading">Career timeline</h2><p>Choose a project to see what I built, how I built it, and the outcome.</p></div>
+      <div><h1 id="timeline-heading">Career timeline</h1><p>Select a bar, milestone, or year to explore the details.</p></div>
       <span class="scope-chip" id="scope-chip"></span>
     </div>
     <div class="workbench">
       <div class="filterbar">
-        <div class="filter-buttons" id="filters" role="group" aria-label="Filter by skill"></div>
-        <label class="search"><span class="sr-only">Search projects</span><input type="search" id="search" placeholder="Search projects or tools"></label>
+        <div class="filter-buttons" id="filters" role="group" aria-label="Filter timeline entries"></div>
+        <label class="search"><span class="sr-only">Search timeline</span><input type="search" id="search" placeholder="Search the timeline"></label>
       </div>
       <div class="toolbar">
         <div class="mode-buttons" role="group" aria-label="View">
@@ -308,7 +284,7 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
           <div class="plot" id="plot"></div>
         </div>
         <div class="chart-caption">
-          <p>Bars span active years. Dots mark single-year projects. A project can appear in multiple lanes.</p>
+          <p>Bars span active years. Numbered dots group milestones in the same year.</p>
           <p id="chart-count" role="status"></p>
         </div>
       </div>
@@ -316,8 +292,8 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
         <div class="chart-caption"><p id="list-count" role="status"></p></div>
         <div class="entries" id="entries"></div>
       </div>
-      <p id="empty" class="empty" hidden>No projects match. <button type="button" class="control small" id="reset">Clear filters</button></p>
-      <div class="detail" id="project-detail" tabindex="-1" aria-label="Selected project">
+      <p id="empty" class="empty" hidden>No entries match. <button type="button" class="control small" id="reset">Clear filters</button></p>
+      <div class="detail" id="project-detail" tabindex="-1" aria-label="Selected timeline entry">
         <div>
           <p class="detail-year" id="detail-year"></p>
           <p class="detail-date" id="detail-date"></p>
@@ -334,7 +310,7 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
           <div class="detail-links" id="detail-links"></div>
           <div class="other-items" id="detail-other"></div>
         </article>
-        <aside class="location-panel" aria-labelledby="location-heading">
+        <aside class="location-panel" id="location-panel" aria-labelledby="location-heading">
           <div class="location-head">
             <h3 id="location-heading">Project locations</h3>
             <div class="mode-buttons" role="group" aria-label="Map area">
@@ -357,19 +333,31 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
           </label>
         </aside>
       </div>
-      <noscript><p class="empty">Enable JavaScript to explore the interactive timeline. Certifications and training are listed below.</p></noscript>
+      <noscript><p class="empty">Enable JavaScript to explore the interactive timeline. Education, certifications, and training are listed below.</p></noscript>
+    </div>
+  </section>
+
+  <section class="section" id="education" aria-labelledby="education-heading">
+    <div class="section-head"><div><h2 id="education-heading">Education</h2></div></div>
+    <div class="credential-grid education-grid">
+      <article class="credential" data-milestone="marymount-ms" data-kind="education" data-place="arlington">
+        <time datetime="2004-12">December 2004</time><h3>M.S. in Computer Science</h3><p>Marymount University · Arlington, VA</p>
+      </article>
+      <article class="credential" data-milestone="gmu-bs" data-kind="education" data-place="fairfax">
+        <time datetime="1996-05">May 1996</time><h3>B.S. in Biology</h3><p>George Mason University · Fairfax, VA</p>
+      </article>
     </div>
   </section>
 
   <section class="section" id="certifications" aria-labelledby="certifications-heading">
     <div class="section-head"><div><h2 id="certifications-heading">Certifications and credentials</h2><p>Years indicate when each credential was earned.</p></div></div>
     <div class="credential-grid">
-      <article class="credential"><time datetime="2021">2021</time><h3>Splunk Certified Power User</h3><p>Splunk</p></article>
-      <article class="credential"><time datetime="2020-05">2020</time><h3>Java / Spring Gold Rank</h3><p>Secure Code Warrior</p></article>
-      <article class="credential"><time datetime="2016-06">2016</time><h3>Advanced Communicator Silver</h3><p>Toastmasters International</p></article>
-      <article class="credential"><time datetime="2015-10">2015</time><h3>Advanced Leader Bronze</h3><p>Toastmasters International</p></article>
-      <article class="credential"><time datetime="2004">2004</time><h3>Sun Certified Java Programmer 1.4</h3><p>Sun Microsystems</p></article>
-      <article class="credential"><time datetime="2000">2000</time><h3>Oracle Certified Professional DBA</h3><p>Oracle</p></article>
+      <article class="credential" data-milestone="splunk-power-user" data-kind="certification"><time datetime="2021">2021</time><h3>Splunk Certified Power User</h3><p>Splunk</p></article>
+      <article class="credential" data-milestone="secure-code-warrior-gold" data-kind="certification"><time datetime="2020-05">2020</time><h3>Java / Spring Gold Rank</h3><p>Secure Code Warrior</p></article>
+      <article class="credential" data-milestone="toastmasters-acs" data-kind="certification"><time datetime="2016-06">2016</time><h3>Advanced Communicator Silver</h3><p>Toastmasters International</p></article>
+      <article class="credential" data-milestone="toastmasters-alb" data-kind="certification"><time datetime="2015-10">2015</time><h3>Advanced Leader Bronze</h3><p>Toastmasters International</p></article>
+      <article class="credential" data-milestone="sun-java-programmer" data-kind="certification"><time datetime="2004">2004</time><h3>Sun Certified Java Programmer 1.4</h3><p>Sun Microsystems</p></article>
+      <article class="credential" data-milestone="oracle-dba" data-kind="certification"><time datetime="2000">2000</time><h3>Oracle Certified Professional DBA</h3><p>Oracle</p></article>
     </div>
   </section>
 
@@ -379,39 +367,51 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
       <article class="training-panel">
         <h3>Delivered</h3>
         <ul>
-          <li><time datetime="2020">2020</time><div><strong>Automated security scanning in CI/CD</strong><small>Presented at a GEICO Security Champion event.</small></div></li>
-          <li><time datetime="2016">2016–17</time><div><strong>Java back-end engineering bootcamp</strong><small>Taught a 12-week program for NOVA Uncommon Coders with The Iron Yard.</small></div></li>
-          <li><time datetime="2016">2016–17</time><div><strong>Java, Spring, and MEAN stack</strong><small>Delivered corporate training for Ally Financial, Liberty Mutual, and BlueCross BlueShield of South Carolina.</small></div></li>
-          <li><time datetime="2014">2014–16</time><div><strong>Technical talks on architecture and cloud</strong><small>Presented “Communications Among Software Components” and “IT Complexity in the Era of Cloud” through Toastmasters.</small></div></li>
+          <li data-milestone="geico-security-talk" data-kind="training" data-role="delivered"><time datetime="2020">2020</time><div><strong>Automated security scanning in CI/CD</strong><small>Presented at a GEICO Security Champion event.</small></div></li>
+          <li data-milestone="nova-java-bootcamp" data-kind="training" data-role="delivered" data-years="2016,2017"><time datetime="2016">2016–17</time><div><strong>Java back-end engineering bootcamp</strong><small>Taught a 12-week program for NOVA Uncommon Coders with The Iron Yard.</small></div></li>
+          <li data-milestone="enterprise-java-training" data-kind="training" data-role="delivered" data-years="2016,2017"><time datetime="2016">2016–17</time><div><strong>Java, Spring, and MEAN stack</strong><small>Delivered corporate training for Ally Financial, Liberty Mutual, and BlueCross BlueShield of South Carolina.</small></div></li>
+          <li data-milestone="toastmasters-technical-talks" data-kind="training" data-role="delivered" data-years="2014,2015,2016"><time datetime="2014">2014–16</time><div><strong>Technical talks on architecture and cloud</strong><small>Presented “Communications Among Software Components” and “IT Complexity in the Era of Cloud” through Toastmasters.</small></div></li>
         </ul>
       </article>
       <article class="training-panel">
         <h3>Completed</h3>
         <ul>
-          <li><time datetime="2025">2025</time><div><strong>Incorporating AI Into SDLC</strong><small>No Fluff Just Stuff webinar</small></div></li>
-          <li><time datetime="2024">2024</time><div><strong>LangChain4j QuickStart</strong><small>No Fluff Just Stuff webinar</small></div></li>
-          <li><time datetime="2023">2023</time><div><strong>Advanced Terraform</strong><small>LinkedIn Learning course completion</small></div></li>
-          <li><time datetime="2023">2023</time><div><strong>Designing and Building Integration Solutions (ARC-101)</strong><small>Salesforce Trailhead Academy course completion</small></div></li>
-          <li><time datetime="2022">2022</time><div><strong>Developer Fundamentals</strong><small>MuleSoft</small></div></li>
-          <li><time datetime="2021">2021</time><div><strong>Splunk fundamentals and dashboard creation</strong><small>Splunk</small></div></li>
-          <li><time datetime="2020">2020</time><div><strong>OWASP Top 10 and secure coding</strong><small>Secure Code Warrior training</small></div></li>
+          <li data-milestone="ai-into-sdlc" data-kind="training" data-role="completed"><time datetime="2025">2025</time><div><strong>Incorporating AI Into SDLC</strong><small>No Fluff Just Stuff webinar</small></div></li>
+          <li data-milestone="langchain4j-quickstart" data-kind="training" data-role="completed"><time datetime="2024">2024</time><div><strong>LangChain4j QuickStart</strong><small>No Fluff Just Stuff webinar</small></div></li>
+          <li data-milestone="advanced-terraform" data-kind="training" data-role="completed"><time datetime="2023">2023</time><div><strong>Advanced Terraform</strong><small>LinkedIn Learning course completion</small></div></li>
+          <li data-milestone="salesforce-arc101" data-kind="training" data-role="completed"><time datetime="2023">2023</time><div><strong>Designing and Building Integration Solutions (ARC-101)</strong><small>Salesforce Trailhead Academy course completion</small></div></li>
+          <li data-milestone="mulesoft-fundamentals" data-kind="training" data-role="completed"><time datetime="2022">2022</time><div><strong>Developer Fundamentals</strong><small>MuleSoft</small></div></li>
+          <li data-milestone="splunk-dashboard-training" data-kind="training" data-role="completed"><time datetime="2021">2021</time><div><strong>Splunk fundamentals and dashboard creation</strong><small>Splunk</small></div></li>
+          <li data-milestone="owasp-secure-coding" data-kind="training" data-role="completed"><time datetime="2020">2020</time><div><strong>OWASP Top 10 and secure coding</strong><small>Secure Code Warrior training</small></div></li>
         </ul>
         <details>
           <summary>Earlier technical training</summary>
           <ul>
-            <li><time datetime="2019">2019</time><div><strong>SonarQube, Spring Boot microservices, real-time big data, and AWS high availability</strong><small>SonarSource and Lynda.com</small></div></li>
-            <li><time datetime="2016">2016</time><div><strong>Ruby, CA AutoSys, and progressive web apps</strong><small>The Iron Yard, Freddie Mac, and Google I/O</small></div></li>
-            <li><time datetime="2015">2015</time><div><strong>Streaming charts, Apache Spark, AngularJS / Ionic, and REST API security</strong><small>PubNub, IBM, independent tutorial, and Java Brains</small></div></li>
-            <li><time datetime="2014">2014–15</time><div><strong>Oracle ADF, security discussions, and project governance</strong><small>Acentia / GDIT / CSC and CareFirst</small></div></li>
-            <li><time datetime="2013">2013</time><div><strong>Secure Coding in Java/JEE (DEV541)</strong><small>SANS Institute</small></div></li>
-            <li><time datetime="2008">2008–13</time><div><strong>WebSphere development and administration, content management, and SharePoint administration</strong><small>IBM Training, Ascendant, and CareFirst</small></div></li>
-            <li><time datetime="2006">2006</time><div><strong>IBM Rational ClearQuest and ClearCase</strong><small>Affiliated Computing Services</small></div></li>
-            <li><time datetime="2003">2003–04</time><div><strong>Enterprise Java and WebSphere application design</strong><small>Val-Tech</small></div></li>
+            <li data-milestone="cloud-and-data-training" data-kind="training" data-role="completed"><time datetime="2019">2019</time><div><strong>SonarQube, Spring Boot microservices, real-time big data, and AWS high availability</strong><small>SonarSource and Lynda.com</small></div></li>
+            <li data-milestone="ruby-autosys-webapps" data-kind="training" data-role="completed"><time datetime="2016">2016</time><div><strong>Ruby, CA AutoSys, and progressive web apps</strong><small>The Iron Yard, Freddie Mac, and Google I/O</small></div></li>
+            <li data-milestone="streaming-visuals-and-api-security" data-kind="training" data-role="completed"><time datetime="2015">2015</time><div><strong>Streaming charts, Apache Spark, AngularJS / Ionic, and REST API security</strong><small>PubNub, IBM, independent tutorial, and Java Brains</small></div></li>
+            <li data-milestone="oracle-adf-and-governance" data-kind="training" data-role="completed" data-years="2014,2015"><time datetime="2014">2014–15</time><div><strong>Oracle ADF, security discussions, and project governance</strong><small>Acentia / GDIT / CSC and CareFirst</small></div></li>
+            <li data-milestone="sans-dev541" data-kind="training" data-role="completed"><time datetime="2013">2013</time><div><strong>Secure Coding in Java/JEE (DEV541)</strong><small>SANS Institute</small></div></li>
+            <li data-milestone="websphere-platform-training" data-kind="training" data-role="completed" data-years="2008,2009,2013"><time datetime="2008">2008, 2009, 2013</time><div><strong>WebSphere development and administration, content management, and SharePoint administration</strong><small>IBM Training, Ascendant, and CareFirst</small></div></li>
+            <li data-milestone="clearquest-clearcase" data-kind="training" data-role="completed"><time datetime="2006">2006</time><div><strong>IBM Rational ClearQuest and ClearCase</strong><small>Affiliated Computing Services</small></div></li>
+            <li data-milestone="val-tech-enterprise-java" data-kind="training" data-role="completed" data-years="2003,2004"><time datetime="2003">2003–04</time><div><strong>Enterprise Java and WebSphere application design</strong><small>Val-Tech</small></div></li>
           </ul>
         </details>
       </article>
     </div>
   </section>
+    <aside class="featured" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured accomplishments</h2>
+      <a class="feature" href="#project=geico" data-project="geico">
+        <span class="feature-number">4h → 15m</span><span class="feature-copy">Automated pull requests across 130+ repositories<small>GEICO</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="feature" href="#project=statefarm" data-project="statefarm">
+        <span class="feature-number">4 APIs</span><span class="feature-copy">Secured and enhanced Spring Boot claims services<small>State Farm</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
+      </a>
+      <a class="feature" href="#project=ironyard" data-project="ironyard">
+        <span class="feature-number">12 weeks</span><span class="feature-copy">Taught Java backend engineering to military veterans<small>NOVA Uncommon Coders</small></span><span class="feature-arrow" aria-hidden="true">↗</span>
+      </a>
+    </aside>
   <footer class="site-footer">
     <span>Prakash Subedi · Ellicott City, Maryland</span>
     <div class="profiles">
@@ -818,7 +818,7 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
       1,
       3
     ],
-    "lead": "Built and secured four claims APIs",
+    "lead": "Secured and enhanced four claims APIs",
     "notes": [
       "Enhanced PCF-hosted APIs that integrated with Verisk Xactware, DB2, and Salesforce. Supported GitLab CI/CD, security remediation, and preparation for a move to Red Hat OpenShift Service on AWS.",
       "Updated SQL for API operations, built Splunk dashboards to report on API activity, and instrumented AWS Lambda workloads with Dynatrace."
@@ -880,8 +880,13 @@ h1 { font: 400 clamp(3.15rem, 6.65vw, 6rem)/.98 var(--display); letter-spacing: 
 'use strict';
 
 const get = id => document.getElementById(id);
-const records = JSON.parse(get('timeline-data').textContent);
+const milestoneLanes = {education: 5, certification: 6, training: 7};
+const records = [
+  ...JSON.parse(get('timeline-data').textContent),
+  ...Array.from(document.querySelectorAll('[data-milestone]'), readMilestone),
+];
 const places = {
+  "arlington": {"label": "Arlington, VA", "scene": "region", "us": [79.54, 44.23], "region": [51.02, 73.65]},
   "north-va": {
     "label": "Northern Virginia",
     "scene": "region",
@@ -1032,11 +1037,12 @@ const places = {
   }
 };
 const projects = new Map(records.map(record => [record.id, record]));
-const lanes = ['Teaching & community', 'Application engineering', 'Cloud & reliability', 'Data & reporting', 'AI prototyping'];
-const laneOrder = [4, 2, 1, 3, 0];
+const lanes = ['Teaching & community', 'Application engineering', 'Cloud & reliability', 'Data & reporting', 'AI prototyping', 'Education', 'Certifications and credentials', 'Training and presentations'];
+const laneOrder = [4, 2, 1, 3, 0, 5, 6, 7];
 const filters = [
-  ['all', 'All work'], ['java', 'Java & APIs'], ['cloud', 'Cloud & DevOps'],
+  ['all', 'All activity'], ['work', 'Projects'], ['java', 'Java & APIs'], ['cloud', 'Cloud & DevOps'],
   ['security', 'Security'], ['data', 'Data & reporting'], ['ai', 'AI prototyping'], ['teaching', 'Teaching'],
+  ['education', 'Education'], ['certification', 'Certifications'], ['training', 'Training'],
 ];
 const earliest = Math.min(...records.map(record => record.start));
 const latest = Math.max(...records.map(record => record.end));
@@ -1059,6 +1065,25 @@ let timer;
 let startedAt;
 let frameDuration;
 let activeSpeed;
+
+function readMilestone(entry) {
+  const {milestone: id, kind, years: listedYears, place, role} = entry.dataset;
+  const time = entry.querySelector('time');
+  const year = Number(time.dateTime.slice(0, 4));
+  const years = listedYears ? listedYears.split(',').map(Number) : [year];
+  const name = entry.querySelector('h3, strong').textContent;
+  const description = entry.querySelector('p, small').textContent;
+  const dates = time.dateTime.length > 4
+    ? new Intl.DateTimeFormat('en-US', {timeZone: 'UTC', month: 'long', year: 'numeric'}).format(new Date(time.dateTime + '-01'))
+    : time.textContent;
+  const themes = [kind, ...(role === 'delivered' ? ['teaching'] : [])];
+  return {
+    id, kind, name, short: name, lead: name, outcome: description,
+    start: years[0], end: years.at(-1), years, dates, lane: milestoneLanes[kind], themes,
+    notes: [], tags: role ? [role === 'delivered' ? 'Delivered' : 'Completed'] : [],
+    place, locationMode: place ? 'campus' : undefined,
+  };
+}
 
 function add(parent, tag, className, content) {
   const element = document.createElement(tag);
@@ -1101,9 +1126,8 @@ function projectLocation(record) {
 }
 
 function locationNote(record) {
-  if (!record) return 'Choose a project to see its location.';
-  if (!record.place) return 'Location unlisted for this project.';
-  const place = places[record.place];
+  if (!record) return 'Choose an entry to see its location.';
+  if (!record.place) return 'Location unlisted for this entry.';
   const label = projectLocation(record);
   if (record.locationMode === 'client') return label + '. Pin shows the client site.';
   if (record.locationMode === 'office') return label + '. Pin shows the employer’s office.';
@@ -1121,8 +1145,9 @@ function renderMapPicker(record) {
     mappedResults = state.visible;
     const groups = new Map();
     picker.replaceChildren();
-    add(picker, 'option', '', 'Choose a project by location').value = '';
+    add(picker, 'option', '', 'Choose an entry by location').value = '';
     for (const item of state.visible) {
+      if (item.kind && !item.place) continue;
       const label = item.place ? places[item.place].label : 'Location unlisted';
       if (!groups.has(label)) groups.set(label, []);
       groups.get(label).push(item);
@@ -1186,7 +1211,12 @@ function currentRange() {
 }
 
 function isActive(record, year) {
+  if (record.years) return record.years.includes(year);
   return record.start <= year && year <= record.end;
+}
+
+function firstVisibleYear(record, start) {
+  return record.years?.find(year => year >= start) ?? Math.max(start, record.start);
 }
 
 function inRange(year) {
@@ -1200,13 +1230,17 @@ function normalize(text) {
 
 function refreshVisible() {
   const [start, end] = currentRange();
+  const {filter} = state;
   const query = normalize(state.query).split(/\s+/).filter(Boolean);
   state.visible = records.filter(record => {
     if (record.start > end || record.end < start) return false;
-    if (state.filter !== 'all' && !record.themes.includes(state.filter)) return false;
+    if (record.years && !record.years.some(year => year >= start && year <= end)) return false;
+    if (filter === 'work' && record.kind) return false;
+    if (filter !== 'all' && filter !== 'work' && !record.themes.includes(filter)) return false;
     const searchable = normalize([
       record.name, record.short, record.lead, record.outcome, dateRange(record),
-      projectLaneLabels(record), projectLocation(record), ...record.tags, ...record.notes,
+      projectLaneLabels(record), ...(record.years ?? []), ...record.tags, ...record.notes,
+      record.place || !record.kind ? projectLocation(record) : '',
     ].filter(Boolean).join(' '));
     return query.every(word => searchable.includes(word));
   });
@@ -1218,6 +1252,25 @@ function makeRow(plot, name, lane) {
   if (lane !== undefined) add(stub, 'span', 'lane-dot').setAttribute('aria-hidden', 'true');
   add(stub, 'span', '', name);
   return row;
+}
+
+function addMilestoneMarks(track, lane, entries, start, end) {
+  for (let year = start; year <= end; year++) {
+    const group = entries.filter(entry => isActive(entry, year));
+    if (!group.length) continue;
+    const record = group[0];
+    const marker = button(track, 'event grouped', group.length > 1 ? String(group.length) : '');
+    marker.style.gridColumn = year - start + 1;
+    marker.style.gridRow = 1;
+    if (group.length === 1) add(marker, 'span', 'lane-dot').setAttribute('aria-hidden', 'true');
+    marker.title = group.map(item => item.name).join(' · ');
+    marker.setAttribute('aria-label', year + ': ' + marker.title + ', ' + lanes[lane]);
+    marker.addEventListener('click', event => {
+      seek(year, group.includes(state.selected) ? state.selected : record);
+      if (event.detail && matchMedia('(max-width: 760px)').matches) focusDetail();
+    });
+    marks.push({record, marker, group, year});
+  }
 }
 
 function renderChart() {
@@ -1242,6 +1295,10 @@ function renderChart() {
     if (!laneProjects.length) continue;
     const row = makeRow(plot, lanes[lane], lane);
     const track = add(row, 'div', 'track');
+    if (laneProjects[0].kind) {
+      addMilestoneMarks(track, lane, laneProjects, start, end);
+      continue;
+    }
     const lastBySlot = [];
     for (const record of laneProjects) {
       const from = Math.max(start, record.start);
@@ -1275,10 +1332,10 @@ function renderList() {
     const item = button(container, 'entry lane-' + record.lane);
     add(item, 'small', '', dateRange(record) + ' · ' + projectLaneLabels(record));
     add(item, 'strong', '', record.name);
-    add(item, 'span', '', record.lead);
-    add(item, 'span', 'entry-location', projectLocation(record));
+    add(item, 'span', '', record.kind ? record.outcome : record.lead);
+    if (!record.kind || record.place) add(item, 'span', 'entry-location', projectLocation(record));
     item.addEventListener('click', () => {
-      seek(Math.max(record.start, currentRange()[0]), record);
+      seek(firstVisibleYear(record, currentRange()[0]), record);
       focusDetail();
     });
     listButtons.set(record.id, item);
@@ -1322,22 +1379,28 @@ function renderDetail() {
   date.textContent = record ? dateRange(record) : '';
   date.hidden = !record || date.textContent === String(state.year);
   get('copy-link').hidden = !record;
+  get('copy-link').textContent = record?.kind ? 'Copy milestone link' : 'Copy project link';
   get('copy-status').textContent = '';
   for (const id of ['detail-notes', 'detail-tags', 'detail-links', 'detail-other']) get(id).replaceChildren();
 
   const title = get('detail-title');
   const outcome = get('detail-outcome');
   const category = get('detail-category');
-  get('detail-location').textContent = record ? projectLocation(record) : '';
-  renderProjectMap(record);
+  const showLocation = record && (!record.kind || record.place);
+  get('detail-location').textContent = showLocation ? projectLocation(record) : '';
+  get('detail-location').hidden = !showLocation;
+  const showMap = Boolean(showLocation || !record && state.visible.some(item => item.place));
+  get('location-panel').hidden = !showMap;
+  get('project-detail').dataset.hasMap = String(showMap);
+  if (showMap) renderProjectMap(record);
   if (!record) {
-    title.textContent = 'No matching projects in ' + state.year;
+    title.textContent = 'No matching entries in ' + state.year;
     category.textContent = '';
     outcome.textContent = 'Choose another year or adjust the filters.';
     return;
   }
 
-  category.textContent = record.name + ' · ' + projectLaneLabels(record);
+  category.textContent = record.kind ? projectLaneLabels(record) : record.name + ' · ' + projectLaneLabels(record);
   title.textContent = record.lead;
   outcome.textContent = record.outcome ?? '';
   for (const note of record.notes) add(get('detail-notes'), 'li', '', note);
@@ -1350,7 +1413,7 @@ function renderDetail() {
   }
   const concurrent = state.visible.filter(other => other !== record && isActive(other, state.year));
   if (concurrent.length) {
-    add(get('detail-other'), 'span', 'other-note', 'Also active this year');
+    add(get('detail-other'), 'span', 'other-note', 'Also in ' + state.year);
     for (const other of concurrent) {
       const item = button(get('detail-other'), 'control small', other.short);
       item.addEventListener('click', () => seek(state.year, other));
@@ -1367,9 +1430,10 @@ function showSelection(year, preferred, scroll = true) {
   get('plot').style.setProperty('--cursor', ((year - start) * 100 / (end - start + 1)) + '%');
   get('year-select').value = year;
   for (const [value, tick] of ticks) tick.setAttribute('aria-current', value === year);
-  for (const {record, marker} of marks) {
-    marker.setAttribute('aria-pressed', record === state.selected);
-    marker.dataset.active = String(isActive(record, year));
+  for (const {record, marker, group, year: markYear} of marks) {
+    const selected = group ? markYear === year && group.includes(state.selected) : record === state.selected;
+    marker.setAttribute('aria-pressed', selected);
+    marker.dataset.active = String(group ? markYear === year : isActive(record, year));
   }
   for (const [id, item] of listButtons) item.setAttribute('aria-pressed', id === state.selected?.id);
   get('prev').disabled = year <= start;
@@ -1382,7 +1446,7 @@ function showSelection(year, preferred, scroll = true) {
 
 function readingTime(record) {
   const words = [record.lead, record.outcome, ...record.notes].filter(Boolean).join(' ').trim().split(/\s+/).length;
-  return Math.max(4300, Math.min(12500, 900 + 205 * words));
+  return Math.max(record.kind ? 2800 : 4300, Math.min(12500, 900 + 205 * words));
 }
 
 function buildFrames() {
@@ -1390,7 +1454,7 @@ function buildFrames() {
   const frames = [];
   if (!state.visible.length) return frames;
   for (let year = start; year <= end; year++) {
-    const starts = state.visible.filter(record => Math.max(start, record.start) === year);
+    const starts = state.visible.filter(record => firstVisibleYear(record, start) === year);
     if (starts.length) {
       for (const record of starts) frames.push({year, record, duration: readingTime(record)});
     } else {
@@ -1463,7 +1527,12 @@ function startPlayback(fromBeginning = false) {
 
 function updateCount() {
   const n = state.visible.length;
-  const summary = n + (n === 1 ? ' project' : ' projects');
+  const work = state.visible.filter(record => !record.kind).length;
+  const milestones = n - work;
+  const labels = [];
+  if (work) labels.push(work + (work === 1 ? ' project' : ' projects'));
+  if (milestones) labels.push(milestones + (milestones === 1 ? ' milestone' : ' milestones'));
+  const summary = labels.join(' · ') || '0 entries';
   get('chart-count').textContent = summary;
   get('list-count').textContent = summary;
   get('empty').hidden = n > 0;
@@ -1481,7 +1550,7 @@ function refresh({moveToMatch = false, preferred = state.selected} = {}) {
   if (!inRange(state.year)) state.year = first;
   if (moveToMatch && state.visible.length && !chooseProject(state.year, preferred)) {
     const nearest = [...state.visible].sort((a, b) => Math.abs(a.start - state.year) - Math.abs(b.start - state.year))[0];
-    state.year = Math.max(first, nearest.start);
+    state.year = firstVisibleYear(nearest, first);
   }
   showSelection(state.year, preferred);
   // Rebuild concurrent projects even if the selected project stayed the same.
@@ -1543,10 +1612,10 @@ async function copyProjectLink() {
   let message;
   try {
     await navigator.clipboard.writeText(url.href);
-    message = location.protocol === 'file:' ? 'Local link copied. Use the published page to share it.' : 'Project link copied.';
+    message = location.protocol === 'file:' ? 'Local link copied. Use the published page to share it.' : 'Link copied.';
   } catch {
     history.replaceState(null, '', url);
-    message = 'Project link set in the address bar.';
+    message = 'Link set in the address bar.';
   }
   if (state.selected?.id === id) get('copy-status').textContent = message;
 }
@@ -1604,7 +1673,7 @@ get('map-project').addEventListener('change', event => {
     renderMapPicker(state.selected);
     return;
   }
-  seek(Math.max(record.start, currentRange()[0]), record);
+  seek(firstVisibleYear(record, currentRange()[0]), record);
 });
 get('chart-scroll').addEventListener('keydown', event => {
   if (!['ArrowLeft', 'ArrowRight'].includes(event.key) || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
